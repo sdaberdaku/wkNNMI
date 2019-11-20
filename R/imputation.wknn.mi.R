@@ -858,8 +858,7 @@
 #' of multiple missing values and include the cross-information among features.
 #'
 #' References:
-#' Tavazzi E., Daberdaku S., Vasta R., Calvo A. Chiò A. Di Camillo B. (2020). An adaptive Mutual Information-weighted k-NN algorithm for the imputation
-#'  of static and dynamic mixed-type data. BMC Medical Informatics and Decision Making
+#' Tavazzi E., Daberdaku S., Vasta R., Calvo A., Chiò A., Di Camillo B. (2020). An adaptive Mutual Information-weighted k-NN algorithm for the imputation of static and dynamic mixed-type data. BMC Medical Informatics and Decision Making
 #'
 #' @author Sebastian Daberdaku
 #'
@@ -1060,8 +1059,7 @@ if(getRversion() >= "2.15.1") utils::globalVariables(c("jj"))
 #' of multiple missing values and include the cross-information among features.
 #'
 #' References:
-#' Tavazzi E., Daberdaku S., Vasta R., Calvo A. Chiò A. Di Camillo B. (2020). An adaptive Mutual Information-weighted k-NN algorithm for the imputation
-#'  of static and dynamic mixed-type data. BMC Medical Informatics and Decision Making
+#' Tavazzi E., Daberdaku S., Vasta R., Calvo A., Chiò A., Di Camillo B. (2020). An adaptive Mutual Information-weighted k-NN algorithm for the imputation of static and dynamic mixed-type data. BMC Medical Informatics and Decision Making
 #'
 #' @author Sebastian Daberdaku
 #'
