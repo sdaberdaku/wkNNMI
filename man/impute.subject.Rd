@@ -70,7 +70,7 @@ was implemented for the sample comparison, capable of handling the different nat
 of multiple missing values and include the cross-information among features.
 
 References:
-Tavazzi E., Daberdaku S., Vasta R., Calvo A., Chiò A., Di Camillo B. (2020). An adaptive Mutual Information-weighted k-NN algorithm for the imputation of static and dynamic mixed-type data. BMC Medical Informatics and Decision Making
+Tavazzi E., Daberdaku S., Vasta R., Calvo A., Chiò A., Di Camillo B. An adaptive Mutual Information-weighted k-NN algorithm for the imputation of static and dynamic mixed-type data.
 }
 \author{
 Sebastian Daberdaku
