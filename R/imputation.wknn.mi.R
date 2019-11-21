@@ -1112,7 +1112,7 @@ impute.wknn  <- function(dataset.to.impute,
     subID <- subjects[[jj]]
     cat("Currently imputing subject: '", subID, "'\n", sep="")
     # Subject to impute
-    tictoc::tic()
+
     subject.to.impute <- dataset.to.impute[which(dataset.to.impute[, sub.id.feature] == subID), ]
     candidates <- dataset.to.impute[-which(dataset.to.impute[, sub.id.feature] == subID), ]
     imputed.subject <- impute.subject(subject.to.impute = subject.to.impute,
@@ -1131,7 +1131,6 @@ impute.wknn  <- function(dataset.to.impute,
                                       sub.id.feature = sub.id.feature,
                                       make.unique.separator = make.unique.separator,
                                       K = K)
-    tictoc::toc()
     return(imputed.subject)
   }
 
