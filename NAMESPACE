@@ -1,7 +1,5 @@
 exportPattern("^[[:alpha:]]+")
 import(foreach)
-importFrom(tictoc,tic)
-importFrom(tictoc,toc)
 importFrom(infotheo,mutinformation)
 importFrom(infotheo,discretize)
 importFrom(graphics,boxplot)
