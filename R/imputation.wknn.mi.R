@@ -858,7 +858,7 @@
 #' of multiple missing values and include the cross-information among features.
 #'
 #' References:
-#' Tavazzi E., Daberdaku S., Vasta R., Calvo A., Chiò A., Di Camillo B. An adaptive Mutual Information-weighted k-NN algorithm for the imputation of static and dynamic mixed-type data.
+#' Tavazzi E., Daberdaku S., Vasta R., Calvo A., Chiò A., Di Camillo B. Exploiting mutual information for the imputation of static and dynamic mixed-type data with an adaptive k-nearest neighbours approach.
 #'
 #' @author Sebastian Daberdaku
 #'
@@ -1059,7 +1059,7 @@ if(getRversion() >= "2.15.1") utils::globalVariables(c("jj"))
 #' of multiple missing values and include the cross-information among features.
 #'
 #' References:
-#' Tavazzi E., Daberdaku S., Vasta R., Calvo A., Chiò A., Di Camillo B. An adaptive Mutual Information-weighted k-NN algorithm for the imputation of static and dynamic mixed-type data.
+#' Tavazzi E., Daberdaku S., Vasta R., Calvo A., Chiò A., Di Camillo B. Exploiting mutual information for the imputation of static and dynamic mixed-type data with an adaptive k-nearest neighbours approach.
 #'
 #' @author Sebastian Daberdaku
 #'
