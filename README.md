@@ -9,6 +9,13 @@ This package implements an adaptive weighted k-nearest neighbours (wk-NN) imputa
 Tavazzi E., Daberdaku S., Vasta R., Calvo A., Chiò A., Di Camillo B.
 
 ## Installation
+The package requires the following R packages to function correctly: *infotheo* and *foreach*.
+
+#### Installation from CRAN
+
+```r
+install.packages("wkNNMI")
+```
 
 #### Installation from GitLab
 
@@ -20,12 +27,9 @@ library(devtools)
 install_gitlab("sysbiobig/wkNNMI")
 ```
 
-
 #### Installation from source package
 
-The wkNNMI R package can be downloaded at http://sysbiobig.dei.unipd.it/?q=wkNNMI
-
-It requires the *infotheo* and *foreach* packages to work.
+The wkNNMI R source package can be downloaded at http://sysbiobig.dei.unipd.it/?q=wkNNMI
 
 To install it from source, please use the following command:
 ```r
@@ -35,7 +39,7 @@ where "X.X.X" indicates the package version.
 
 ## Getting started
 
-The package contains two functions *impute.subject* and *impute.wknn*. Load the package and check the documentation of the two methods.
+The package contains two functions *impute.subject* and *impute.wknn*. Load the package and check the documentation of the two functions.
 
 ```r
 library(wkNNMI)

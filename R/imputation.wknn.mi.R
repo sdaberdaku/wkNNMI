@@ -1,3 +1,38 @@
+#' wkNNMI: An Adaptive Mutual Information-Weighted k-NN Algorithm for the
+#' Imputation of Static and Dynamic Mixed-Type Data
+#'
+#' This package implements an adaptive weighted k-nearest neighbours (wk-NN)
+#' imputation algorithm for clinical register data developed to explicitly
+#' handle missing values of continuous/ordinal/categorical and static/dynamic
+#' features conjointly. For each subject with missing data to be imputed,
+#' the method creates a feature vector constituted by the information collected
+#' over his/her first *window_size* time units of visits. This vector is used as
+#' sample in a k-nearest neighbours procedure, in order to select, among the
+#' other patients, the ones with the most similar temporal evolution of the
+#' disease over time. An \emph{ad hoc} similarity metric was implemented for
+#' the sample comparison, capable of handling the different nature of the data,
+#' the presence of multiple missing values and include the cross-information
+#' among features.
+#'
+#' Reference: Tavazzi E., Daberdaku S., Vasta R., Calvo A., Chiò A.,
+#' Di Camillo B. "Exploiting mutual information for the imputation of
+#' static and dynamic mixed-type data with an adaptive k-nearest neighbours
+#' approach".
+#'
+#' The wkNNMI package mainly serves as container for the two functions that
+#' implement the imputation algorithm impute.subject() and impute.wknn(), and
+#' for the example datasets patient.data and new.patient.
+#'
+#'
+#' @import foreach
+#' @importFrom infotheo mutinformation discretize
+#' @importFrom graphics boxplot
+#' @importFrom stats median
+#' @importFrom utils globalVariables
+#' @docType package
+#' @name wkNNMI
+NULL
+
 .mode <- function(x) {
   ux <- unique(x)
   ux[which.max(tabulate(match(x, ux)))]
@@ -130,8 +165,11 @@
     }
 
     # Normalize nmi
-    nmi <- nmi/sum(nmi)
-
+    if (sum(nmi) > 0) {
+      nmi <- nmi/sum(nmi)
+    } else {
+      nmi[] <- 1
+    }
     # Save in list nmi
     list.nmi[[feat]] <- nmi
   }
@@ -846,7 +884,7 @@
   return(current.subj.feature.vector.imputed)
 }
 
-#' @title The function performs k-Nearest Neighbours imputation weighted with Mutual Information between analytes.
+#' @title The function performs k-Nearest Neighbours imputation weighted with Mutual Information between features.
 #'
 #' @description This function implements an adaptive weighted k-nearest neighbours (wk-NN) imputation algorithm for
 #' clinical register data developed to explicitly handle missing values of continuous/ordinal/categorical and
@@ -881,6 +919,8 @@
 #'
 #' @return the imputed data.frame
 #'
+#' @example R/examples/new.patient.imputation.example.R
+#'
 #' @export
 
 
@@ -900,7 +940,7 @@ impute.subject <- function(subject.to.impute,
                            ordinal.features = NULL,
                            time.feature,
                            sub.id.feature,
-                           make.unique.separator,
+                           make.unique.separator = ".",
                            K) {
 
   candidates.visit.times <- candidates[, time.feature]
@@ -1047,7 +1087,7 @@ impute.subject <- function(subject.to.impute,
 if(getRversion() >= "2.15.1") utils::globalVariables(c("jj"))
 
 
-#' @title The function performs k-Nearest Neighbours imputation weighted with Mutual Information between analytes.
+#' @title The function performs k-Nearest Neighbours imputation weighted with Mutual Information between features.
 #'
 #' @description This function implements an adaptive weighted k-nearest neighbours (wk-NN) imputation algorithm for
 #' clinical register data developed to explicitly handle missing values of continuous/ordinal/categorical and
@@ -1078,9 +1118,12 @@ if(getRversion() >= "2.15.1") utils::globalVariables(c("jj"))
 #' @param sub.id.feature name of the subject ID feature
 #' @param make.unique.separator symbol to be used for the make unique function (must not be present in the feature names). Defaults to ".".
 #' @param K number of neighbours to use. Defaults to 15.
-#' @param parallel if TRUE, the iterations are performed in parallel. An appropriate parallel backed must be registered before hand, such as *doMC* or *doSNOW*. Defaults to TRUE.
+#' @param parallel if TRUE, the iterations are performed in parallel. An appropriate parallel backed must be registered before hand, such as *doMC* or *doSNOW*. Defaults to FALSE.
 #'
 #' @return the imputed data.frame
+#'
+#'
+#' @example R/examples/dataset.imputation.example.R
 #'
 #' @export
 
@@ -1095,11 +1138,11 @@ impute.wknn  <- function(dataset.to.impute,
                          continuous.features,
                          categorical.features,
                          ordinal.features,
-                         time.feature = "DELTA",
-                         sub.id.feature = "subID",
+                         time.feature,
+                         sub.id.feature,
                          make.unique.separator = ".",
                          K = 15,
-                         parallel = TRUE) {
+                         parallel = FALSE) {
 
   subjects <- unique(dataset.to.impute[, sub.id.feature])
   n.subjects <- length(subjects)
