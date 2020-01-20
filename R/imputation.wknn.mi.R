@@ -9,15 +9,11 @@
 #' over his/her first *window_size* time units of visits. This vector is used as
 #' sample in a k-nearest neighbours procedure, in order to select, among the
 #' other patients, the ones with the most similar temporal evolution of the
-#' disease over time. An \emph{ad hoc} similarity metric was implemented for
+#' disease over time. An *ad hoc* similarity metric was implemented for
 #' the sample comparison, capable of handling the different nature of the data,
 #' the presence of multiple missing values and include the cross-information
 #' among features.
 #'
-#' Reference: Tavazzi E., Daberdaku S., Vasta R., Calvo A., Chiò A.,
-#' Di Camillo B. "Exploiting mutual information for the imputation of
-#' static and dynamic mixed-type data with an adaptive k-nearest neighbours
-#' approach".
 #'
 #' The wkNNMI package mainly serves as container for the two functions that
 #' implement the imputation algorithm impute.subject() and impute.wknn(), and
@@ -891,12 +887,9 @@ NULL
 #' static/dynamic features conjointly. For each subject with missing data to be imputed, the method creates a
 #' feature vector constituted by the information collected over his/her first *window_size* time units of visits.
 #' This vector is used as sample in a k-nearest neighbours procedure, in order to select, among the other patients,
-#' the ones with the most similar temporal evolution of the disease over time. An \emph{ad hoc} similarity metric
+#' the ones with the most similar temporal evolution of the disease over time. An *ad hoc* similarity metric
 #' was implemented for the sample comparison, capable of handling the different nature of the data, the presence
 #' of multiple missing values and include the cross-information among features.
-#'
-#' References:
-#' Tavazzi E., Daberdaku S., Vasta R., Calvo A., Chiò A., Di Camillo B. Exploiting mutual information for the imputation of static and dynamic mixed-type data with an adaptive k-nearest neighbours approach.
 #'
 #' @author Sebastian Daberdaku
 #'
@@ -1094,12 +1087,9 @@ if(getRversion() >= "2.15.1") utils::globalVariables(c("jj"))
 #' static/dynamic features conjointly. For each subject with missing data to be imputed, the method creates a
 #' feature vector constituted by the information collected over his/her first *window_size* time units of visits.
 #' This vector is used as sample in a k-nearest neighbours procedure, in order to select, among the other patients,
-#' the ones with the most similar temporal evolution of the disease over time. An \emph{ad hoc} similarity metric
+#' the ones with the most similar temporal evolution of the disease over time. An *ad hoc* similarity metric
 #' was implemented for the sample comparison, capable of handling the different nature of the data, the presence
 #' of multiple missing values and include the cross-information among features.
-#'
-#' References:
-#' Tavazzi E., Daberdaku S., Vasta R., Calvo A., Chiò A., Di Camillo B. Exploiting mutual information for the imputation of static and dynamic mixed-type data with an adaptive k-nearest neighbours approach.
 #'
 #' @author Sebastian Daberdaku
 #'
@@ -1121,7 +1111,6 @@ if(getRversion() >= "2.15.1") utils::globalVariables(c("jj"))
 #' @param parallel if TRUE, the iterations are performed in parallel. An appropriate parallel backed must be registered before hand, such as *doMC* or *doSNOW*. Defaults to FALSE.
 #'
 #' @return the imputed data.frame
-#'
 #'
 #' @example R/examples/dataset.imputation.example.R
 #'
