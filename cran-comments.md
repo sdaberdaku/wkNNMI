@@ -1,3 +1,9 @@
+## Resubmission
+
+This is a resubmission of 1.0.1. In this version I have fixed NEWS.md, which
+was not in a format R can parse ("No news entries found" in the incoming
+pre-tests).
+
 ## Resubmission of an archived package
 
 wkNNMI was archived on 2023-08-19 because email to the maintainer address
@@ -23,3 +29,7 @@ Changes in 1.0.1:
 * checking CRAN incoming feasibility ... NOTE
   New submission. Package was archived on CRAN (archived on 2023-08-19 as
   email to the maintainer is undeliverable; see above).
+
+  Possibly misspelled words in DESCRIPTION (NN, Tavazzi, et, al): "k-NN" is
+  the usual abbreviation of k-nearest neighbours, and "Tavazzi et al." is the
+  reference to the paper describing the method.
