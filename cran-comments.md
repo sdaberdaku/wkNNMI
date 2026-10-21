@@ -1,25 +1,24 @@
-## Resubmission
-This is a resubmission. In this version I have:
+## Resubmission of an archived package
 
-* Shortened the title, as requested.
-* Removed the references to our paper in the documentation since it is not published yet (and not available as a preprint).
-* Changed the role of Erica Tavazzi from "ctb" to "aut" as more appropriate.
+wkNNMI was archived on 2023-08-19 because email to the maintainer address
+(sebastian.daberdaku@unipd.it) became undeliverable: I left the University of
+Padua and the account was closed. I am the same maintainer, now at
+sebastiandaberdaku@gmail.com. The old address cannot receive a confirmation.
 
-## Resubmission
-This is a resubmission. In this version I have:
+Changes in 1.0.1:
 
-* Removed the license file from the package, as requested.
-* Removed the \emph{} markup from the Description, as requested.
+* New maintainer email address.
+* Added the reference to the published paper in the Description, a CITATION
+  file, and the URL and BugReports fields.
 
 ## Test environments
-* local Ubuntu Linux 16.04 install, R 3.5.2
-* win-builder (devel and release)
+
+* Docker rocker/r-ver, R 4.6.1, Ubuntu 24.04
+* Docker rocker/r-devel, R-devel (2026-10-19 r90708)
 
 ## R CMD check results
-There were no ERRORs or WARNINGs. 
 
-There was 1 NOTE:
+0 errors | 0 warnings | 1 note
 
 * checking CRAN incoming feasibility ... NOTE
-
-  This is my first submission.
+  New maintainer address; the package was archived on CRAN (see above).

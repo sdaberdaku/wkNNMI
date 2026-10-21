@@ -1,0 +1,24 @@
+bibentry(
+  bibtype = "Article",
+  title = "Exploiting mutual information for the imputation of static and dynamic mixed-type clinical data with an adaptive k-nearest neighbours approach",
+  author = c(
+    person("Erica", "Tavazzi"),
+    person("Sebastian", "Daberdaku"),
+    person("Rosario", "Vasta"),
+    person("Andrea", "Calvo"),
+    person("Adriano", "Chiò"),
+    person("Barbara", "Di Camillo")
+  ),
+  journal = "BMC Medical Informatics and Decision Making",
+  year = "2020",
+  volume = "20",
+  number = "Suppl 5",
+  pages = "174",
+  doi = "10.1186/s12911-020-01166-2",
+  textVersion = paste(
+    "Tavazzi E, Daberdaku S, Vasta R, Calvo A, Chiò A, Di Camillo B (2020).",
+    "Exploiting mutual information for the imputation of static and dynamic mixed-type clinical data",
+    "with an adaptive k-nearest neighbours approach.",
+    "BMC Medical Informatics and Decision Making, 20(Suppl 5), 174. doi:10.1186/s12911-020-01166-2"
+  )
+)
