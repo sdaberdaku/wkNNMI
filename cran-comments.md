@@ -21,4 +21,5 @@ Changes in 1.0.1:
 0 errors | 0 warnings | 1 note
 
 * checking CRAN incoming feasibility ... NOTE
-  New maintainer address; the package was archived on CRAN (see above).
+  New submission. Package was archived on CRAN (archived on 2023-08-19 as
+  email to the maintainer is undeliverable; see above).
